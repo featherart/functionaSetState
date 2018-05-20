@@ -1,11 +1,8 @@
 import React from 'react'
+import CounterForm from './CounterForm'
 
 class Counter extends React.Component {
   state = { count: 0 }
-
-  // handleCount = () => {
-  //   this.setState({count: this.state.count + 1 })
-  // }
 
   handleCount = () => {
     this.setState((prevState, props) => {
@@ -16,10 +13,7 @@ class Counter extends React.Component {
   render () {
     const { count } = this.state
     return (
-      <div>
-        <div>Current count: { count }</div>
-        <input type='button' value='increment value' onClick={this.handleCount} />
-      </div>
+      <CounterForm handleCount={this.handleCount} count={count} />
     )
   }
 }
